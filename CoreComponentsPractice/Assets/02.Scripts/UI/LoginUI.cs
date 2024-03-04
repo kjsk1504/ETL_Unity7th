@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using DiceGame.Data;
 
 namespace DiceGame.UI
 {
@@ -9,11 +9,11 @@ namespace DiceGame.UI
     {
         [SerializeField] TMP_InputField _id;
         [SerializeField] TMP_InputField _pw;
-        [SerializeField] Button _login;
+        [SerializeField] Button _tryLogin;
 
         private void Start()
         {
-            _login.onClick.AddListener(() =>
+            _tryLogin.onClick.AddListener(() =>
             {
                 if (string.IsNullOrEmpty(_id.text))
                     return;
@@ -21,13 +21,8 @@ namespace DiceGame.UI
                 if (string.IsNullOrEmpty(_pw.text))
                     return;
 
-                Login();
+                LoginInformation.TryLogin(_id.text, _pw.text);
             });
-        }
-
-        private void Login()
-        {
-            SceneManager.LoadScene("DiceGame");
         }
     }
 }

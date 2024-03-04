@@ -1,9 +1,9 @@
 using DiceGame.Game;
 using DiceGame.Game.Effects;
 using DiceGame.Level;
+using DiceGame.UI;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DiceGame.Character
@@ -15,7 +15,7 @@ namespace DiceGame.Character
         public const int DIRECTION_POSITIVE = 1;
         public const int DIRECTION_NEGATIVE = -1;
 
-        // 1 : positive, -1 : negative
+        /// <summary> 1 : positive, -1 : negative </summary>
         public int direction { get; set; }
         public int nodeIndex { get; set; }
         public float hp => _hp;
@@ -71,6 +71,18 @@ namespace DiceGame.Character
                 weaponTransform.localPosition = Vector3.zero;
                 weaponTransform.localRotation = Quaternion.identity;
                 _animator.SetInteger(_weaponAnimatorHashID, (int)_weaponStrategy.type);
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                UIManager.instance.Get<UIInventory>().Toggle();
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                UIManager.instance.Get<UIEquipped>().Toggle();
             }
         }
 
@@ -144,6 +156,25 @@ namespace DiceGame.Character
             }
         }
 
+        public void Rotate(float targetY)
+        {
+            float currentY = transform.localRotation.y;
+            StartCoroutine(C_Rotate(currentY, targetY));
+        }
+
+        public IEnumerator C_Rotate(float currentY, float targetY)
+        {
+            float t = 0;
+            while (t < 1.0f)
+            {
+                transform.rotation = new Quaternion(0, Mathf.Lerp(currentY, targetY, t), 0, 0);
+                t += Time.deltaTime;
+                yield return null;
+            }
+            transform.rotation = new Quaternion(0, targetY, 0, 0);
+        }
+
+        #region 발자국 소리
         [SerializeField] AudioSource _footStepAudioSource;
         private void FootL()
         {
@@ -159,5 +190,6 @@ namespace DiceGame.Character
 
             _footStepAudioSource.Play();
         }
+        #endregion
     }
 }

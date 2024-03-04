@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 namespace DiceGame.UI
 {
-    public class UIManager : SingletonBase<UIManager>
+    public class UIManager : SingletonMonoBase<UIManager>
     {
         private Dictionary<Type, IUI> _uis = new Dictionary<Type, IUI>();
         private List<IUIScreen> _screens = new List<IUIScreen>();
@@ -14,11 +14,20 @@ namespace DiceGame.UI
         private List<RaycastResult> _raycastResult = new List<RaycastResult>();
 
 
+        private void Update()
+        {
+            if (_popUps.Count > 0)
+            {
+                if (_popUps.Last.Value.inputActionEnable)
+                    _popUps.Last.Value.InputAction();
+            }
+        }
+
         /// <summary>
         /// UI 최초 등록
         /// </summary>
         /// <param name="ui"> 등록할 UI </param>
-        /// <exception cref="Exception"> 동일한 UI 가 씬에 두개 이상 존재함. 하나 지워야함. </exception>
+        /// <exception cref="동일한 UI 가 씬에 두개 이상 존재함. 하나 지워야함"> 동일한 UI 가 씬에 두개 이상 존재함. 하나 지워야함. </exception>
         public void Register(IUI ui)
         {
             if (_uis.TryAdd(ui.GetType(), ui))
@@ -37,7 +46,7 @@ namespace DiceGame.UI
         /// </summary>
         /// <typeparam name="T"> 가져오려는 UI 타입 </typeparam>
         /// <returns> UI 인터페이스 </returns>
-        /// <exception cref="Exception"> 가져오려는 UI 가 존재하지 않음 </exception>
+        /// <exception cref="가져오려는 UI 가 존재하지 않음"> 가져오려는 UI 가 존재하지 않음. </exception>
         public T Get<T>()
             where T : IUI
         {
@@ -71,7 +80,7 @@ namespace DiceGame.UI
             _popUps.Remove(ui); // 새 PopUp 이 기존에 존재하던 PopUp이면 제거
             _popUps.AddLast(ui); // 새 PopUp 을 가장 뒤에 추가
 
-            if (_popUps.Count > 50)
+            if (sortingOrder > 16)
                 RearrangePopUpSortingOrders();
 
             if (_popUps.Count == 1)

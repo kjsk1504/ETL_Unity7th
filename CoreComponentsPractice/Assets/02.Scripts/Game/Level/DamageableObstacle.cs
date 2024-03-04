@@ -1,4 +1,5 @@
 using DiceGame.Character;
+using DiceGame.Game;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -42,10 +43,11 @@ namespace DiceGame.Level
             _hp = Mathf.Clamp(_hp, _hpMin, _hpMax);
             onHpDepleted?.Invoke(_hp);
 
-            if (_hp == 0)
+            if (_hp == hpMin)
             {
                 node.obstacle = null;
                 gameObject.SetActive(false);
+                DicePlayManager.instance.diceNumber += 1;
             }
         }
     }

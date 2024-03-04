@@ -1,6 +1,7 @@
 using DiceGame.Character;
 using DiceGame.Level.Items;
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace DiceGame.Level
@@ -31,12 +32,19 @@ namespace DiceGame.Level
         public virtual void OnPlayerHere()
         {
             PlayerController.instance.direction = PlayerController.DIRECTION_POSITIVE;
+            PlayerController.instance.Rotate(0);
             item?.Use(PlayerController.instance);
             item = null;
         }
 
         public virtual void OnDiceRolled(int diceValue)
         {
+            PlayerController.instance.direction = PlayerController.DIRECTION_POSITIVE;
+        }
+
+        protected IEnumerator C_MovePlayer(int diceValue)
+        {
+            yield return null;
         }
 
         public int CompareTo(Node other)

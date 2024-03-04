@@ -1,4 +1,4 @@
-﻿namespace DiceGame.Level
+namespace DiceGame.Level
 {
     public class NormalNode : Node
     {
