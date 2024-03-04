@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,6 +21,9 @@ namespace DiceGame.UI
         protected Canvas canvas;
         protected GraphicRaycaster raycastModule;
 
+        public event Action onShow;
+        public event Action onHide;
+
 
         protected virtual void Awake()
         {
@@ -29,17 +33,33 @@ namespace DiceGame.UI
         }
 
         public virtual void InputAction()
-        {            
+        {
         }
 
         public virtual void Show()
         {
-            canvas.enabled = true;
+            if (canvas.enabled == false)
+            {
+                canvas.enabled = true;
+                onShow?.Invoke();
+            }
         }
 
         public virtual void Hide()
         {
-            canvas.enabled = false;
+            if (canvas.enabled == true)
+            {
+                canvas.enabled = false;
+                onHide?.Invoke();
+            }
+        }
+
+        public void Toggle()
+        {
+            if (canvas.enabled)
+                Hide();
+            else
+                Show();
         }
 
         public void Raycast(List<RaycastResult> results)

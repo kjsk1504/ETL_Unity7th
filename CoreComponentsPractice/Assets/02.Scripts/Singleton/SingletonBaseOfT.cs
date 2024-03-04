@@ -1,5 +1,4 @@
 using System;
-using System.Reflection;
 
 namespace DiceGame.Singleton
 {
@@ -12,8 +11,8 @@ namespace DiceGame.Singleton
             {
                 if (_instance == null)
                 {
-                    //ConstructorInfo constructorInfo = typeof(T).GetConstructor(new Type[] { });
-                    //_instance = (T)constructorInfo.Invoke(new object[] { });
+                    // ConstructorInfo constructorInfo = typeof(T).GetConstructor(new Type[] { });
+                    // _instance = (T)constructorInfo.Invoke(new object[] { });
 
                     _instance = (T)Activator.CreateInstance(typeof(T));
                 }
