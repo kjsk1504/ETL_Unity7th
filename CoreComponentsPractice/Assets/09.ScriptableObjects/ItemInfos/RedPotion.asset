@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcc65f3dd9f1884da937e34ca58fc79, type: 3}
   m_Name: RedPotion
   m_EditorClassIdentifier: 
-  <id>k__BackingField: 0
-  <description>k__BackingField: 
-  <maxNum>k__BackingField: 0
-  <icon>k__BackingField: {fileID: 0}
+  <id>k__BackingField: 101
+  <description>k__BackingField: Recover 50 hp.
+  <maxNum>k__BackingField: 99
+  <icon>k__BackingField: {fileID: -655015038, guid: 7da374b3b0857d141b683b56524bad64,
+    type: 3}

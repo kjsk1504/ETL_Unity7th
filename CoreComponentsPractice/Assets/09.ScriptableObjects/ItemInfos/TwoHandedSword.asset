@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcc65f3dd9f1884da937e34ca58fc79, type: 3}
   m_Name: TwoHandedSword
   m_EditorClassIdentifier: 
-  <id>k__BackingField: 0
-  <description>k__BackingField: 
-  <maxNum>k__BackingField: 0
-  <icon>k__BackingField: {fileID: 0}
+  <id>k__BackingField: 1001
+  <description>k__BackingField: This sword is too heavy.
+  <maxNum>k__BackingField: 1
+  <icon>k__BackingField: {fileID: -743242787, guid: 2814f26d32620a242b2bce9e6a3021f0,
+    type: 3}
