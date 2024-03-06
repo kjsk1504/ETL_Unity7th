@@ -39,7 +39,7 @@ namespace DiceGame.Data.Mock
             return _inventorySlotDataModels;
         }
 
-        public InventorySlotDataModel GetItemById(int id)
+        public InventorySlotDataModel GetItemByID(int id)
         {
             return _inventorySlotDataModels[id];
         }

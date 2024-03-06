@@ -1,5 +1,5 @@
 using DiceGame.UI;
-using DiceGame.Character;
+using DiceGame.Game.Character;
 using System;
 using System.Collections;
 using DiceGame.Level;

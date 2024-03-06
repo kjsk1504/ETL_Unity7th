@@ -5,6 +5,8 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using DiceGame.Game.Interactables;
+using DiceGame.Game.Character;
 
 namespace DiceGame.UI
 {
@@ -19,13 +21,17 @@ namespace DiceGame.UI
         [SerializeField] Transform _slotContent;
         /// <summary> 생성된 슬롯들 </summary>
         private List<InventorySlot> _slots;
+        /// <summary> 슬롯의 아이템을 버릴때 월드에 생성할 컨트롤러 </summary>
+        [SerializeField] ItemController _itemControllerPrefab;
         /// <summary> 슬롯 데이터를 가지고 있는 저장소 </summary>
         private IRepository<InventorySlotDataModel> _repository;
         /// <summary> 선택된 슬롯의 ID (선택되지 않았으면 <see cref="NOT_SELECTED"/> </summary>
         private int _selectedSlotID = NOT_SELECTED;
         /// <summary> 선택되지 않았을 때 적용할 상수 </summary>
         private const int NOT_SELECTED = -1;
+        /// <summary> 선택되어 마우스를 따라다니는 아이템의 아이콘 </summary>
         [SerializeField] Image _selectedFollowingItemIcon;
+        /// <summary> Raycast의 결과들 리스트 </summary>
         private List<RaycastResult> _results = new List<RaycastResult>();
 
 
@@ -75,7 +81,7 @@ namespace DiceGame.UI
                             // 캐스팅 타겟 중에 슬롯이 있다면
                             if (result.gameObject.TryGetComponent(out InventorySlot slot))
                             {
-                                if (_repository.GetItemById(slot.slotID).isEmpty == false)
+                                if (_repository.GetItemByID(slot.slotID).isEmpty == false)
                                 {
                                     Select(slot.slotID);
                                     return;
@@ -101,8 +107,8 @@ namespace DiceGame.UI
                                 // 다른 슬롯이 선택됐다면 스왑.
                                 if (_selectedSlotID != slot.slotID)
                                 {
-                                    var selectedSlotData = _repository.GetItemById(_selectedSlotID);
-                                    var castedSlotData = _repository.GetItemById(slot.slotID);
+                                    var selectedSlotData = _repository.GetItemByID(_selectedSlotID);
+                                    var castedSlotData = _repository.GetItemByID(slot.slotID);
                                     _repository.UpdateItem(slot.slotID, new InventorySlotDataModel(selectedSlotData)); 
                                     _repository.UpdateItem(_selectedSlotID, castedSlotData);
                                     Deselect();
@@ -110,6 +116,32 @@ namespace DiceGame.UI
                                 }
                             }
                         }
+                    }
+                    // 다른 UI에 상호작용할만한 것이 있다..!
+                    else if (UIManager.instance.TryCastOther(this, out IUI other, out GameObject hovered))
+                    {
+
+                    }
+                    // 상호작용할만한 UI가 감지되지 않았다 (그냥 World에 클릭)
+                    else
+                    {
+                        // 대리자를 전달할 때(CallBack 등) 람다식 내에서 지역변수가 아닌 멤버변수를 사용하면,
+                        // 해당 대리자가 호출되기 전까지 멤버변수의 값이 수정되었을때 람다식은 해당 멤버변수 위치를 참조하므로
+                        // 의도하지 않은 동작을 할 수 있으므로, 값이 변할 여지가 있는 변수를 참조해야할 경우, 지역변수를 참조하도록 작성한다.
+                        int tmpSlotID = _selectedSlotID; 
+                        UIManager.instance.Get<UIConfirmWindow>()
+                                          .Show(message: "Sure to Throw away ?",
+                                                onConfirm: () =>
+                                                {
+                                                    InventorySlotDataModel slotData = _repository.GetItemByID(tmpSlotID);
+                                                    _repository.UpdateItem(tmpSlotID, new InventorySlotDataModel(0, 0)); // 생성 후 제거가 아니라 제거 후 생성 (논리적 흐름상)
+
+                                                    Instantiate(_itemControllerPrefab,
+                                                                PlayerController.instance.transform.position,
+                                                                Quaternion.identity)
+                                                        .SetUp(slotData);
+                                                });
+                        Deselect();
                     }
                 }
             }

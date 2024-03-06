@@ -33,7 +33,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000011920929, y: 0.000010917755}
+  m_AnchoredPosition: {x: -0.0000011920929, y: 0}
   m_SizeDelta: {x: 0, y: 1000}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7058204615076374455
@@ -1375,6 +1375,8 @@ MonoBehaviour:
   _slotPrefab: {fileID: 3199029476447554373, guid: 0eb6783e3d16b3a4a96529d1acd063c7,
     type: 3}
   _slotContent: {fileID: 5533985609155820566}
+  _itemControllerPrefab: {fileID: 7168968283495736381, guid: b1fd71c60b6bddf4db7258c1dfb69915,
+    type: 3}
   _selectedFollowingItemIcon: {fileID: 5046426743148816761}
 --- !u!1 &7456623104199651454
 GameObject:

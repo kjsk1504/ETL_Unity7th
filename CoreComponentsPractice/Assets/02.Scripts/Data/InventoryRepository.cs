@@ -17,7 +17,7 @@ namespace DiceGame.Data
             throw new NotImplementedException();
         }
 
-        public InventorySlotDataModel GetItemById(int id)
+        public InventorySlotDataModel GetItemByID(int id)
         {
             throw new NotImplementedException();
         }

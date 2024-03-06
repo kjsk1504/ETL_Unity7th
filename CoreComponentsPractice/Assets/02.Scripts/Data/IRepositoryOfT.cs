@@ -17,7 +17,7 @@ namespace DiceGame.Data
         /// <summary>
         /// 모든 데이터 순회용 함수
         /// </summary>
-        /// <returns>  </returns>
+        /// <returns> 데이터 리스트 </returns>
         IEnumerable<T> GetAllItems();
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace DiceGame.Data
         /// </summary>
         /// <param name="id"> 검색할 데이터의 ID </param>
         /// <returns> 검색된 데이터 </returns>
-        T GetItemById(int id);
+        T GetItemByID(int id);
 
         /// <summary>
         /// 데이터 삽입용 함수
