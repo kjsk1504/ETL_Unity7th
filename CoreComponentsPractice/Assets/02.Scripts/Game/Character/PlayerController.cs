@@ -78,6 +78,7 @@ namespace DiceGame.Game.Character
 
         private void Update()
         {
+            Debug.Assert(Input.GetKeyDown(KeyCode.L) == false, "L 눌리면 안되는데...");
             if (Input.GetKeyDown(KeyCode.I))
             {
                 UIManager.instance.Get<UIInventory>().Toggle();

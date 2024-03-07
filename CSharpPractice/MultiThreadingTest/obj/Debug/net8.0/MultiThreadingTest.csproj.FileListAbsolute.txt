@@ -1,0 +1,15 @@
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\MultiThreadingTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\MultiThreadingTest.AssemblyInfoInputs.cache
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\MultiThreadingTest.AssemblyInfo.cs
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\MultiThreadingTest.csproj.CoreCompileInputs.cache
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\MultiThreadingTest.sourcelink.json
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\bin\Debug\net8.0\MultiThreadingTest.exe
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\bin\Debug\net8.0\MultiThreadingTest.deps.json
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\bin\Debug\net8.0\MultiThreadingTest.runtimeconfig.json
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\bin\Debug\net8.0\MultiThreadingTest.dll
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\bin\Debug\net8.0\MultiThreadingTest.pdb
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\MultiThreadingTest.dll
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\refint\MultiThreadingTest.dll
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\MultiThreadingTest.pdb
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\MultiThreadingTest.genruntimeconfig.cache
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\MultiThreadingTest\obj\Debug\net8.0\ref\MultiThreadingTest.dll

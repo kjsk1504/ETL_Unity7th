@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "NSN7pbEP1JvCqHuv9AhVvQ3snLkfka7OvS15Mx8wJDtWrCCel66eWAlUsaGxojj3T9PpstJbE02fQIEd1MidyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreading\\MultiThreading.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kjsk1\\.nuget\\packages\\microsoft.build.tasks.git\\8.0.0\\microsoft.build.tasks.git.8.0.0.nupkg.sha512",
+    "C:\\Users\\kjsk1\\.nuget\\packages\\microsoft.sourcelink.common\\8.0.0\\microsoft.sourcelink.common.8.0.0.nupkg.sha512",
+    "C:\\Users\\kjsk1\\.nuget\\packages\\microsoft.sourcelink.github\\8.0.0\\microsoft.sourcelink.github.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

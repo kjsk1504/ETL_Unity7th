@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A820B7A0-3462-4013-A032-3C346F019086}|MultiThreadingTest\\MultiThreadingTest.csproj|c:\\users\\kjsk1\\documents\\github\\etl_unity7th\\csharppractice\\multithreadingtest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A820B7A0-3462-4013-A032-3C346F019086}|MultiThreadingTest\\MultiThreadingTest.csproj|solutionrelative:multithreadingtest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A9304DE-AE01-469C-84FC-E1716371B481}|MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj|c:\\users\\kjsk1\\documents\\github\\etl_unity7th\\csharppractice\\multithreading_asyncawait\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A9304DE-AE01-469C-84FC-E1716371B481}|MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj|solutionrelative:multithreading_asyncawait\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B19F2284-8009-4FA7-94A9-0F1B01F25CAF}|MultiThreading\\MultiThreading.csproj|c:\\users\\kjsk1\\documents\\github\\etl_unity7th\\csharppractice\\multithreading\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B19F2284-8009-4FA7-94A9-0F1B01F25CAF}|MultiThreading\\MultiThreading.csproj|solutionrelative:multithreading\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A9304DE-AE01-469C-84FC-E1716371B481}|MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj|c:\\users\\kjsk1\\documents\\github\\etl_unity7th\\csharppractice\\multithreading_asyncawait\\multithreading_asyncawait.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3A9304DE-AE01-469C-84FC-E1716371B481}|MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj|solutionrelative:multithreading_asyncawait\\multithreading_asyncawait.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kjsk1\\AppData\\Local\\Temp\\.vsdbgsrc\\b3ab4fb85b206f2413edb729cada949a41704b6f8655f0c544f8427c6a3a5c21\\Task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kjsk1\\AppData\\Local\\Temp\\.vsdbgsrc\\ab90e8f61637078aa1e2d28d3c4e590110b8ed375377df6b135eb70d798fdaf4\\Thread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreadingTest\\Program.cs",
+              "RelativeDocumentMoniker": "MultiThreadingTest\\Program.cs",
+              "ToolTip": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreadingTest\\Program.cs",
+              "RelativeToolTip": "MultiThreadingTest\\Program.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAwwFEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T08:02:54.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\kjsk1\\AppData\\Local\\Temp\\.vsdbgsrc\\b3ab4fb85b206f2413edb729cada949a41704b6f8655f0c544f8427c6a3a5c21\\Task.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\b3ab4fb85b206f2413edb729cada949a41704b6f8655f0c544f8427c6a3a5c21\\Task.cs",
+              "ToolTip": "C:\\Users\\kjsk1\\AppData\\Local\\Temp\\.vsdbgsrc\\b3ab4fb85b206f2413edb729cada949a41704b6f8655f0c544f8427c6a3a5c21\\Task.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\b3ab4fb85b206f2413edb729cada949a41704b6f8655f0c544f8427c6a3a5c21\\Task.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "ViewState": "AQIAAEcGAAAAAAAAAAAUwFoGAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T07:40:39.484Z",
+              "EditorCaption": " [\uC77D\uAE30 \uC804\uC6A9]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MultiThreading_AsyncAwait",
+              "DocumentMoniker": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj",
+              "RelativeDocumentMoniker": "MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj",
+              "ToolTip": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj",
+              "RelativeToolTip": "MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-07T07:40:10.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreading_AsyncAwait\\Program.cs",
+              "RelativeDocumentMoniker": "MultiThreading_AsyncAwait\\Program.cs",
+              "ToolTip": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreading_AsyncAwait\\Program.cs",
+              "RelativeToolTip": "MultiThreading_AsyncAwait\\Program.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAgwDoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T07:21:19.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Thread.cs",
+              "DocumentMoniker": "C:\\Users\\kjsk1\\AppData\\Local\\Temp\\.vsdbgsrc\\ab90e8f61637078aa1e2d28d3c4e590110b8ed375377df6b135eb70d798fdaf4\\Thread.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\ab90e8f61637078aa1e2d28d3c4e590110b8ed375377df6b135eb70d798fdaf4\\Thread.cs",
+              "ToolTip": "C:\\Users\\kjsk1\\AppData\\Local\\Temp\\.vsdbgsrc\\ab90e8f61637078aa1e2d28d3c4e590110b8ed375377df6b135eb70d798fdaf4\\Thread.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\ab90e8f61637078aa1e2d28d3c4e590110b8ed375377df6b135eb70d798fdaf4\\Thread.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "ViewState": "AQIAAGwBAAAAAAAAAAAUwH8BAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T04:49:40.073Z",
+              "EditorCaption": " [\uC77D\uAE30 \uC804\uC6A9]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreading\\Program.cs",
+              "RelativeDocumentMoniker": "MultiThreading\\Program.cs",
+              "ToolTip": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreading\\Program.cs",
+              "RelativeToolTip": "MultiThreading\\Program.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAQwEYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T04:10:52.659Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
