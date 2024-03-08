@@ -21,7 +21,7 @@ namespace DiceGame.UI
                 if (string.IsNullOrEmpty(_pw.text))
                     return;
 
-                LoginInformation.TryLogin(_id.text, _pw.text);
+                _ = LoginInformation.TryLogin(_id.text, _pw.text);
             });
         }
     }

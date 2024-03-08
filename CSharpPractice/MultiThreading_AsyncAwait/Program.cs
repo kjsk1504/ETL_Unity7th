@@ -2,8 +2,21 @@
 {
     internal class Program
     {
+        public static int beverageCount;
+        public static object countLock = new object();
+
         static void Main(string[] args)
         {
+            List<Task<string>> tasks = new List<Task<string>>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                tasks.Add(MakeBaristaToWork());
+            }
+            Task.WaitAll(tasks.ToArray());
+            Console.WriteLine(beverageCount);
+            return;
+
             Task<string> task = MakeBaristaToWork();
             task.Wait();
 
@@ -17,7 +30,10 @@
             }
 
             Task.WaitAll(baristaTasks.ToArray());
-            for (int i = 0; i < baristaTasks.Count; i++)
+
+            Console.WriteLine(beverageCount);
+
+            for (int i = 0;i < baristaTasks.Count; i++)
             {
                 Console.WriteLine(baristaTasks[i].Result);
             }
@@ -28,6 +44,15 @@
             Beverage result = await HireBarista("Smart Barista")
                                         .GoToCafe("Luke's Coffee")
                                         .MakeCoffee();
+
+            lock (countLock) // 잠겨 있는지 안 잠겨 있는지 확인, 마지막으로 접근한 스레드도 반환
+            {
+                for (int i = 0; i < 1000000; i++)
+                {
+                    beverageCount++;
+                }
+            }
+
             return result.ToString();
         }
 
@@ -66,7 +91,7 @@
         public async Task<Beverage> MakeCoffee() // async : 비동기 구문임을 명시
         {
             Console.WriteLine($"바리스타 {name}은(는) 커피 추출을 시작합니다...");
-            await Task.Delay(3000); // 할당(new)하고 시작(Start)하고 기다리는(Wait) 로직을 await로 간소화
+            await Task.Delay(3000); // await : 할당(new)하고 시작(Start)하고 기다리는(Wait) 로직을 await로 간소화
             //Task task1 = new Task(() =>
             //                      {
             //                          Thread.Sleep(3000);

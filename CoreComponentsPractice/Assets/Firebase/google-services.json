@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "825573303050",
+    "firebase_url": "https://etl7-unity-kjs-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "etl7-unity-kjs",
+    "storage_bucket": "etl7-unity-kjs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825573303050:android:882e26e2ab402a046ed0f3",
+        "android_client_info": {
+          "package_name": "com.ETL_7th.CoreComponentsPractice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825573303050-643javujh81nsuhrglsob6u83jfiddks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj2viOSTKyCGO_q9rIUCINEDvW684JX04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825573303050-643javujh81nsuhrglsob6u83jfiddks.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "825573303050-b6pialiqa5hsbalmeeso40rh2l1u20k2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ETL-7th.CoreComponentsPractice"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
