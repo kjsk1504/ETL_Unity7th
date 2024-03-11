@@ -7,9 +7,13 @@ namespace DiceGame.Data
     {
         public UnitOfWork() 
         {
-            inventoryRepository = new InventoryRepository();
+            _context = new InGameContext();
+            inventoryRepository = new InventoryRepository(_context); // context에 대한 의존성 주입을 생성자를 통해서 수행
         }
 
+        public bool isReady => _context.hasInitialized;
         public IRepository<InventorySlotDataModel> inventoryRepository { get; private set; }
+
+        private InGameContext _context;
     }
 }

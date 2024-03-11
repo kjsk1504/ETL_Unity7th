@@ -3,8 +3,10 @@ using Firebase.Firestore;
 using Firebase.Extensions;
 using System;
 using DiceGame.Game;
+using DiceGame.UI;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Firebase;
 
 namespace DiceGame.Data
 {
@@ -17,6 +19,13 @@ namespace DiceGame.Data
         
         public static async Task<bool> TryLogin(string id, string pw)
         {
+            var dependencyState = await FirebaseApp.CheckAndFixDependenciesAsync();
+
+            if (dependencyState != DependencyStatus.Available)
+            {
+                throw new Exception();
+            }
+
             if (isTesting)
             {
                 id = "tester";
@@ -36,20 +45,32 @@ namespace DiceGame.Data
                     Dictionary<string, object> documentDictionary = documentSnapshot.ToDictionary();
                     if (documentDictionary.ContainsKey("id"))
                     {
-                        if (id.Equals((string)documentDictionary["id"]) &&
-                            pw.Equals((string)documentDictionary["pw"]))
+                        if (id.Equals((string)documentDictionary["id"]))
                         {
-                            profile = new ProfileDataModel()
+                            if (pw.Equals((string)documentDictionary["pw"]))
                             {
-                                id = (string)documentDictionary["id"],
-                                pw = (string)documentDictionary["pw"],
-                                nickname = (string)documentDictionary["nickname"]
-                            };
+                                profile = new ProfileDataModel()
+                                {
+                                    id = (string)documentDictionary["id"],
+                                    pw = (string)documentDictionary["pw"],
+                                    nickname = (string)documentDictionary["nickname"]
+                                };
 
-                            return;
+                                return;
+                            }
+                            else
+                            {
+                                UIManager.instance.Get<UIWarningWindow>()
+                                                  .Show("Wrong password.");
+
+                                return;
+                            }
                         }
                     }
                 }
+
+                UIManager.instance.Get<UIWarningWindow>()
+                                  .Show("Wrong ID.");
             });
 
             if (loggedIn)
