@@ -10,6 +10,7 @@ namespace DiceGame.Game
     public enum GameState
     {
         None,
+        WaitUntilInternetConnected,
         Login,
         WaitUntilLoggedIn,
         LoadResources,
@@ -60,6 +61,10 @@ namespace DiceGame.Game
                         SceneManager.LoadScene("Login");
                         _state++;
                     }
+                    break;
+                case GameState.WaitUntilInternetConnected:
+                    if (InternetConnection.IsGoogleWebsiteReachable())
+                        _state++;
                     break;
                 case GameState.WaitUntilLoggedIn:
                     {

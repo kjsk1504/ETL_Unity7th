@@ -24,7 +24,7 @@ namespace DiceGame.Data
         public async void Load()
         {
             DatabaseReference inventorySlotRef =
-                _realtimeDB.GetReference($"users/{LoginInformation.profile.id}/inventorySlots");
+                _realtimeDB.GetReference($"users/{LoginInformation.userKey}/inventorySlots");
 
             DataSnapshot snapshot = await inventorySlotRef.GetValueAsync();  // 그냥 Data가 담긴 Snapshot
 
@@ -58,7 +58,7 @@ namespace DiceGame.Data
         {
             string json = JsonConvert.SerializeObject(newData); // 저장할 객체를 json으로 직렬화
             // 새로운 Task를 만듬 -> 이 함수는 종료
-            _realtimeDB.GetReference($"users/{LoginInformation.profile.id}/inventorySlots/{slotID}") // 저장할 위치 참조
+            _realtimeDB.GetReference($"users/{LoginInformation.userKey}/inventorySlots/{slotID}") // 저장할 위치 참조
                        .SetRawJsonValueAsync(json) // 해당 위치에 저장
                        .ContinueWithOnMainThread(task =>
                        {
@@ -77,7 +77,7 @@ namespace DiceGame.Data
         /// <param name="onCompleted"> 읽기 완료 후 실행할 행동 </param>
         public void LoadInventorySlotDataModel(int slotID, Action<InventorySlotDataModel> onCompleted)
         {
-            _realtimeDB.GetReference($"users/{LoginInformation.profile.id}/inventorySlots/{slotID}") // 읽을 위치 참조
+            _realtimeDB.GetReference($"users/{LoginInformation.userKey}/inventorySlots/{slotID}") // 읽을 위치 참조
                        .GetValueAsync() // 해당 위치에서 읽기
                        .ContinueWith(task =>
                        {

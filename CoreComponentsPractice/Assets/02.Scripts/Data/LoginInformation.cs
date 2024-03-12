@@ -1,39 +1,53 @@
-using UnityEngine;
 using Firebase.Firestore;
 using Firebase.Extensions;
-using System;
 using DiceGame.Game;
-using DiceGame.UI;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Firebase;
 
 namespace DiceGame.Data
 {
     public static class LoginInformation
     {
-        public static bool loggedIn => profile == null ? false : profile.IsValid;
+        public static bool loggedIn => string.IsNullOrEmpty(s_id) == false;
+        public static string userKey { get; private set; }
         public static ProfileDataModel profile { get; private set; }
-        public static bool isTesting = GameManager.instance.isTesting;
+        private static string s_id;
 
         
-        public static async Task<bool> TryLogin(string id, string pw)
+        public static async Task RefreshInformationAsync(string id)
         {
-            var dependencyState = await FirebaseApp.CheckAndFixDependenciesAsync();
-
-            if (dependencyState != DependencyStatus.Available)
-            {
-                throw new Exception();
-            }
-
-            if (isTesting)
+            if (GameManager.instance.isTesting)
             {
                 id = "tester";
-                pw = "0000";
             }
 
             FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+            userKey = id.Replace("@", "").Replace(".", "");
+            DocumentReference docRef = db.Collection("users").Document(userKey);
 
+            await docRef.GetSnapshotAsync().ContinueWithOnMainThread(async task =>
+            {
+                Dictionary<string, object> documentDictionary = task.Result.ToDictionary();
+
+                if (documentDictionary == null)
+                {
+                    // todo -> Request user to set nickname
+                    documentDictionary = new Dictionary<string, object> 
+                    {
+                        { "nickname", "NotSet" },
+                    };
+                    await docRef.SetAsync(documentDictionary);
+                }
+
+                profile = new ProfileDataModel
+                {
+                    nickname = (string)documentDictionary["nickname"],
+                };
+            });
+
+            s_id = id;
+
+            /* id/pw 방식
             CollectionReference usersRef = db.Collection("users");
 
             await usersRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
@@ -51,8 +65,6 @@ namespace DiceGame.Data
                             {
                                 profile = new ProfileDataModel()
                                 {
-                                    id = (string)documentDictionary["id"],
-                                    pw = (string)documentDictionary["pw"],
                                     nickname = (string)documentDictionary["nickname"]
                                 };
 
@@ -75,12 +87,13 @@ namespace DiceGame.Data
 
             if (loggedIn)
             {
-                Debug.Log($"[LoginInformation] : Logged in with {profile.id}");
+                Debug.Log($"[LoginInformation] : Logged in with {id}");
                 return true;
             }
 
-            Debug.Log($"LoginInformation] : Failed to Login with {profile.id}");
+            Debug.Log($"LoginInformation] : Failed to Login with {id}");
             return false;
+            */
         }
     }
 }
