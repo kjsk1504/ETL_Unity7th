@@ -56,19 +56,20 @@ namespace DiceGame.Game
             {
                 case GameState.None:
                     break;
+                case GameState.WaitUntilInternetConnected:
+                    if (InternetConnection.IsGoogleWebsiteReachable())
+                        _state++;
+                    break;
                 case GameState.Login:
                     {
                         SceneManager.LoadScene("Login");
                         _state++;
                     }
                     break;
-                case GameState.WaitUntilInternetConnected:
-                    if (InternetConnection.IsGoogleWebsiteReachable())
-                        _state++;
-                    break;
                 case GameState.WaitUntilLoggedIn:
                     {
-                        if (LoginInformation.loggedIn)
+                        if (LoginInformation.loggedIn && 
+                            LoginInformation.profile != null)
                         {
                             if (PhotonManager.instance)
                                 _state++;

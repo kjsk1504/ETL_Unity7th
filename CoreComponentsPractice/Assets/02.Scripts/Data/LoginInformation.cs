@@ -10,12 +10,14 @@ namespace DiceGame.Data
     {
         public static bool loggedIn => string.IsNullOrEmpty(s_id) == false;
         public static string userKey { get; private set; }
-        public static ProfileDataModel profile { get; private set; }
+        public static ProfileDataModel profile { get; set; }
         private static string s_id;
 
         
-        public static async Task RefreshInformationAsync(string id)
+        public static async Task<bool> RefreshInformationAsync(string id)
         {
+            bool result = false;
+
             if (GameManager.instance.isTesting)
             {
                 id = "tester";
@@ -25,27 +27,22 @@ namespace DiceGame.Data
             userKey = id.Replace("@", "").Replace(".", "");
             DocumentReference docRef = db.Collection("users").Document(userKey);
 
-            await docRef.GetSnapshotAsync().ContinueWithOnMainThread(async task =>
+            await docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
             {
                 Dictionary<string, object> documentDictionary = task.Result.ToDictionary();
 
-                if (documentDictionary == null)
+                if (documentDictionary != null)
                 {
-                    // todo -> Request user to set nickname
-                    documentDictionary = new Dictionary<string, object> 
+                    profile = new ProfileDataModel
                     {
-                        { "nickname", "NotSet" },
+                        nickname = (string)documentDictionary["nickname"],
                     };
-                    await docRef.SetAsync(documentDictionary);
+                    result = true;
                 }
-
-                profile = new ProfileDataModel
-                {
-                    nickname = (string)documentDictionary["nickname"],
-                };
             });
 
             s_id = id;
+            return result;
 
             /* id/pw 방식
             CollectionReference usersRef = db.Collection("users");

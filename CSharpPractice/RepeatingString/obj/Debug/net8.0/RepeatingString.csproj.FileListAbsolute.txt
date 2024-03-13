@@ -1,0 +1,15 @@
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\bin\Debug\net8.0\RepeatingString.exe
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\bin\Debug\net8.0\RepeatingString.deps.json
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\bin\Debug\net8.0\RepeatingString.runtimeconfig.json
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\bin\Debug\net8.0\RepeatingString.dll
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\bin\Debug\net8.0\RepeatingString.pdb
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\RepeatingString.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\RepeatingString.AssemblyInfoInputs.cache
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\RepeatingString.AssemblyInfo.cs
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\RepeatingString.csproj.CoreCompileInputs.cache
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\RepeatingString.sourcelink.json
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\RepeatingString.dll
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\refint\RepeatingString.dll
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\RepeatingString.pdb
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\RepeatingString.genruntimeconfig.cache
+C:\Users\kjsk1\Documents\GitHub\ETL_Unity7th\CSharpPractice\RepeatingString\obj\Debug\net8.0\ref\RepeatingString.dll

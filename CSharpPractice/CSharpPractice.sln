@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiThreading_AsyncAwait",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiThreadingTest", "MultiThreadingTest\MultiThreadingTest.csproj", "{A820B7A0-3462-4013-A032-3C346F019086}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockPractices", "LockPractices\LockPractices.csproj", "{F81E019B-D789-494F-8FA4-E14F2944DE75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LockPractices", "LockPractices\LockPractices.csproj", "{F81E019B-D789-494F-8FA4-E14F2944DE75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEnumeratorPractice", "IEnumerator\IEnumeratorPractice.csproj", "{C5930266-AEAB-4133-B421-AD7C897CB123}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IEnumeratorPractice", "IEnumerator\IEnumeratorPractice.csproj", "{C5930266-AEAB-4133-B421-AD7C897CB123}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepeatingString", "RepeatingString\RepeatingString.csproj", "{DE915BB9-BFC0-4D0B-ADDC-8181F4BFA072}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C5930266-AEAB-4133-B421-AD7C897CB123}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5930266-AEAB-4133-B421-AD7C897CB123}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5930266-AEAB-4133-B421-AD7C897CB123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE915BB9-BFC0-4D0B-ADDC-8181F4BFA072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE915BB9-BFC0-4D0B-ADDC-8181F4BFA072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE915BB9-BFC0-4D0B-ADDC-8181F4BFA072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE915BB9-BFC0-4D0B-ADDC-8181F4BFA072}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
