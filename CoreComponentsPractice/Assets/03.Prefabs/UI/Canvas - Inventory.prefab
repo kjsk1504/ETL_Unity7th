@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7644ddc26ea7843ab4c7921297fee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resetPositionOnEnabled: 1
+  _resetPositionOnEnabled: 0
 --- !u!1 &1017120726499677894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbb1e219152f1349aa7f645f1157ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hideWhenPointerDownOutside: 0
   _slotPrefab: {fileID: 3199029476447554373, guid: 0eb6783e3d16b3a4a96529d1acd063c7,
     type: 3}
   _slotContent: {fileID: 5533985609155820566}

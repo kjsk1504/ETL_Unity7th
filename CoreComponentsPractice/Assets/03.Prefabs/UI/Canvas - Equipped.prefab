@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9ebd50ddeeeba429ff538c12111c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hideWhenPointerDownOutside: 0
 --- !u!1 &5830017107693226326
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7644ddc26ea7843ab4c7921297fee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resetPositionOnEnabled: 1
+  _resetPositionOnEnabled: 0
 --- !u!1 &6320247758444569888
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,20 +1,91 @@
+using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace DiceGame.UI
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class UILobby : UIBase, IUIScreen, ILobbyCallbacks
     {
+        /// <summary>  </summary>
+        public int selectedRoomListSlotIndex
+        {
+            get => _selectedRoomListSlotIndex;
+            set
+            {
+                _selectedRoomListSlotIndex = value;
+                _join.interactable = value >= 0;
+            }
+        }
+
+        /// <summary>  </summary>
+        private Button _join;
+        /// <summary>  </summary>
+        private Button _create;
+        /// <summary>  </summary>
         [SerializeField] RectTransform _roomListContent;
+        /// <summary>  </summary>
         [SerializeField] RoomListSlot _roomListSlotPrefab;
-        private List<RoomListSlot> _roomListSlots;
+        /// <summary>  </summary>
+        private List<RoomListSlot> _roomListSlots = new List<RoomListSlot>();
+        /// <summary>  </summary>
         private int _selectedRoomListSlotIndex;
+        /// <summary>  </summary>
+        private List<RoomInfo> _localRoomInfos;
+
+
+        private void OnEnable()
+        {
+            PhotonNetwork.AddCallbackTarget(this); // PhotonNetwork interface 상속받았으면, 콜백 호출 대상으로 등록해야 구현한 콜백함수들이 호출됨.
+        }
+
+        private void OnDisable()
+        {
+            PhotonNetwork.RemoveCallbackTarget(this);
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            _join = transform.Find("Button - Join").GetComponent<Button>();
+            _create = transform.Find("Button - Create").GetComponent<Button>();
+
+            _join.onClick.AddListener(() =>
+            {
+                if (PhotonNetwork.JoinRoom(_localRoomInfos[_selectedRoomListSlotIndex].Name))
+                {
+                }
+                else
+                {
+                    UIManager.instance.Get<UIWarningWindow>()
+                                      .Show("The room is invalid.");
+                }
+            });
+
+            _create.onClick.AddListener(() => UIManager.instance.Get<UICreatingRoom>().Show());
+        }
+
+        private void Start()
+        {
+            StartCoroutine(C_JoinLobyAtTheVeryFirstTime());
+        }
+
+        IEnumerator C_JoinLobyAtTheVeryFirstTime()
+        {
+            yield return new WaitUntil(() => PhotonNetwork.NetworkClientState == ClientState.ConnectedToMasterServer);
+            PhotonNetwork.JoinLobby();
+        }
 
         public void OnJoinedLobby()
         {
-            throw new System.NotImplementedException();
+            Debug.Log($"Joined Lobby");
         }
 
         public void OnLeftLobby()
@@ -29,16 +100,20 @@ namespace DiceGame.UI
 
         public void OnRoomListUpdate(List<RoomInfo> roomList)
         {
+            _localRoomInfos = roomList;
+
+            Debug.Log("Room list updated...");
             for (int i = _roomListSlots.Count - 1; i >= 0; i--)
                 Destroy(_roomListSlots[i].gameObject);
 
-                _roomListSlots.Clear();
+            _roomListSlots.Clear();
 
             for (int i = 0; i < roomList.Count; i++)
             {
                 RoomListSlot tmpSlot = Instantiate(_roomListSlotPrefab, _roomListContent);
                 tmpSlot.roomIndex = i;
-                tmpSlot.onSelect += () => _selectedRoomListSlotIndex = tmpSlot.roomIndex;
+                tmpSlot.Refresh(roomList[i].Name, roomList[i].PlayerCount, roomList[i].MaxPlayers);
+                tmpSlot.onSelect += () => selectedRoomListSlotIndex = tmpSlot.roomIndex;
             }
         }
     }

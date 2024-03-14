@@ -9,7 +9,7 @@ namespace DiceGame.UI
     public class UIManager : SingletonMonoBase<UIManager>
     {
         private Dictionary<Type, IUI> _uis = new Dictionary<Type, IUI>();
-        private List<IUIScreen> _screens = new List<IUIScreen>();
+        public List<IUIScreen> _screens = new List<IUIScreen>();
         private LinkedList<IUIPopUp> _popUps = new LinkedList<IUIPopUp>();
         private List<RaycastResult> _raycastResult = new List<RaycastResult>();
 
@@ -20,6 +20,14 @@ namespace DiceGame.UI
             {
                 if (_popUps.Last.Value.inputActionEnable)
                     _popUps.Last.Value.InputAction();
+            }
+
+            if (_screens.Count > 0)
+            {
+                foreach (var screen in _screens)
+                {
+                    screen.InputAction();
+                }
             }
         }
 

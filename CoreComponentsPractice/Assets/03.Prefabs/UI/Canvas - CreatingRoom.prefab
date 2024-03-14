@@ -125,14 +125,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 6
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 7
+  m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 7
+  m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
   m_CharacterLimit: 0
@@ -826,6 +826,7 @@ GameObject:
   - component: {fileID: 9202066904369578534}
   - component: {fileID: 6455497550767780447}
   - component: {fileID: 359068568046607038}
+  - component: {fileID: 8418674336575739419}
   m_Layer: 5
   m_Name: Canvas - CreatingRoom
   m_TagString: Untagged
@@ -860,7 +861,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3926058375134482584}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -916,6 +917,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8418674336575739419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3926058375134482584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8556c27721fc714a9769e5165896c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hideWhenPointerDownOutside: 1
 --- !u!1 &4418260356789872029
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +942,7 @@ GameObject:
   - component: {fileID: 7618766658453602575}
   - component: {fileID: 2125217482417719415}
   - component: {fileID: 7395663937037858568}
+  - component: {fileID: 5608349435856554737}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -983,7 +998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1014,6 +1029,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 0
+--- !u!114 &5608349435856554737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4418260356789872029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7644ddc26ea7843ab4c7921297fee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _resetPositionOnEnabled: 1
 --- !u!1 &5549130721034450832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,9 +1320,9 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7433691516184394875}
   m_HandleRect: {fileID: 2273690372632696858}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.1
-  m_NumberOfSteps: 7
+  m_NumberOfSteps: 8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

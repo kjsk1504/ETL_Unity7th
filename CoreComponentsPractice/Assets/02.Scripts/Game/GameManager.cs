@@ -2,6 +2,7 @@ using DiceGame.Data;
 using DiceGame.Data.Mock;
 using DiceGame.Network;
 using DiceGame.Singleton;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +16,9 @@ namespace DiceGame.Game
         WaitUntilLoggedIn,
         LoadResources,
         WaitUnilResourcesLoaded,
-        InGame,
+        InLobby,
+        InGameReady,
+        InGamePlay,
     }
 
 
@@ -68,7 +71,7 @@ namespace DiceGame.Game
                     break;
                 case GameState.WaitUntilLoggedIn:
                     {
-                        if (LoginInformation.loggedIn && 
+                        if (LoginInformation.loggedIn &&
                             LoginInformation.profile != null)
                         {
                             if (PhotonManager.instance)
@@ -77,7 +80,7 @@ namespace DiceGame.Game
                     }
                     break;
                 case GameState.LoadResources:
-                    { 
+                    {
                         if (isTesting)
                             unitOfWork = new MockUnitOfWork();
                         else
@@ -90,12 +93,16 @@ namespace DiceGame.Game
                     {
                         if (unitOfWork.isReady)
                         {
-                            SceneManager.LoadScene("DicePlay");
+                            SceneManager.LoadScene("Lobby");
                             _state++;
                         }
                     }
                     break;
-                case GameState.InGame:
+                case GameState.InLobby:
+                    break;
+                case GameState.InGameReady:
+                    break;
+                case GameState.InGamePlay:
                     break;
                 default:
                     break;

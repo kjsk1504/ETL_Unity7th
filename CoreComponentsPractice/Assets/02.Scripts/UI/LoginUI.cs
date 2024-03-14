@@ -9,7 +9,7 @@ using Firebase.Extensions;
 
 namespace DiceGame.UI
 {
-    public class LoginUI : MonoBehaviour
+    public class LoginUI : UIBase
     {
         [SerializeField] TMP_InputField _id;
         [SerializeField] TMP_InputField _pw;
