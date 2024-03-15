@@ -9,19 +9,19 @@ using System;
 namespace DiceGame.UI
 {
     /// <summary>
-    /// 
+    /// 방의 슬롯
     /// </summary>
     public class RoomListSlot : MonoBehaviour
     {
-        /// <summary>  </summary>
+        /// <summary> 방의 인덱스 </summary>
         public int roomIndex;
-        /// <summary>  </summary>
+        /// <summary> 방의 이름 </summary>
         private TMP_Text _roomName;
-        /// <summary>  </summary>
+        /// <summary> 방 참가자 비율 </summary>
         private TMP_Text _playerRatio;
-        /// <summary>  </summary>
+        /// <summary> 선택되었을때 (슬롯 자체) </summary>
         private Button _select;
-        /// <summary>  </summary>
+        /// <summary> 선택되었을 때 호출되는 이벤트 (wrapping) </summary>
         public event UnityAction onSelect
         {
             add
@@ -35,7 +35,7 @@ namespace DiceGame.UI
         }
 
         /// <summary>
-        /// 
+        /// 방의 정보를 갱신하는 함수
         /// </summary>
         public void Refresh(string roomName, int currentPlayersInRoom, int MaxPlayers)
         {

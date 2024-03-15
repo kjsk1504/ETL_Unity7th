@@ -8,7 +8,7 @@ using DiceGame.Game;
 namespace DiceGame.Network
 {
     /// <summary>
-    /// 
+    /// Photon 서버를 관리하는 매니저 (콜백 함수)
     /// </summary>
     public class PhotonManager : MonoBehaviourPunCallbacks
     {
@@ -28,7 +28,7 @@ namespace DiceGame.Network
         private static PhotonManager s_instance;
         #endregion
 
-        /// <summary>  </summary>
+        /// <summary> 마스터서버에 연결되면 호출되는 이벤트 </summary>
         public event Action onConnectedToMaster;
 
         private void Awake()
@@ -53,6 +53,7 @@ namespace DiceGame.Network
         {
             base.OnConnectedToMaster();
             onConnectedToMaster?.Invoke();
+            PhotonNetwork.AutomaticallySyncScene = true; // 얘 안해주면 PhotonNetwork.LoadLevel()이 방장 외 다른 클라이언트의 씬을 동기화하지 않음.
             Debug.Log("[PhotonManager]: Connected to master.");
         }
 
@@ -73,10 +74,20 @@ namespace DiceGame.Network
         {
             base.OnJoinedRoom();
 
-            SceneManager.LoadScene("GameReay");
+            SceneManager.LoadScene("GameReady");
             PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable()
             {
                 { "isReady", false }
+            });
+            GameManager.instance.state = GameState.InGameReady;
+        }
+
+        public override void OnLeftRoom()
+        {
+            base.OnLeftRoom();
+
+            PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable()
+            {
             });
         }
     }

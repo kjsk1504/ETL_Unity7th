@@ -9,11 +9,11 @@ using UnityEngine.UI;
 namespace DiceGame.UI
 {
     /// <summary>
-    /// 
+    /// 로비 UI 관리
     /// </summary>
     public class UILobby : UIBase, IUIScreen, ILobbyCallbacks
     {
-        /// <summary>  </summary>
+        /// <summary> 선택된 방의 인덱스 </summary>
         public int selectedRoomListSlotIndex
         {
             get => _selectedRoomListSlotIndex;
@@ -24,19 +24,19 @@ namespace DiceGame.UI
             }
         }
 
-        /// <summary>  </summary>
+        /// <summary> Join 버튼 </summary>
         private Button _join;
-        /// <summary>  </summary>
+        /// <summary> Create 버튼 </summary>
         private Button _create;
-        /// <summary>  </summary>
+        /// <summary> 방의 부모 될 컨텐트 위치 </summary>
         [SerializeField] RectTransform _roomListContent;
-        /// <summary>  </summary>
+        /// <summary> 방 슬롯의 프리펩 </summary>
         [SerializeField] RoomListSlot _roomListSlotPrefab;
-        /// <summary>  </summary>
+        /// <summary> 방 슬롯 리스트 </summary>
         private List<RoomListSlot> _roomListSlots = new List<RoomListSlot>();
-        /// <summary>  </summary>
+        /// <summary> 선택된 방의 인텍스 </summary>
         private int _selectedRoomListSlotIndex;
-        /// <summary>  </summary>
+        /// <summary> 룸의 정보 리스트 </summary>
         private List<RoomInfo> _localRoomInfos;
 
 
@@ -114,6 +114,7 @@ namespace DiceGame.UI
                 tmpSlot.roomIndex = i;
                 tmpSlot.Refresh(roomList[i].Name, roomList[i].PlayerCount, roomList[i].MaxPlayers);
                 tmpSlot.onSelect += () => selectedRoomListSlotIndex = tmpSlot.roomIndex;
+                _roomListSlots.Add(tmpSlot);
             }
         }
     }
