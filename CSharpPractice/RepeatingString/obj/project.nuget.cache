@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TfsjZ/tYjISADJVzTXmKAK6zpuHbXd9Pij3MECL+aApXIbvTVit5+XHlaouwKePvWkH7Bw+Ic4tS+M7upaaHBg==",
+  "dgSpecHash": "vAsleaKQr8bZaRbYUu1bI3xw9FNzQxZrfTIy3n6tt3HAOCrnsuTddut3eRHf7CpH+vx5fpEm4WwcBdBc/9404Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\RepeatingString\\RepeatingString.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kjsk1\\.nuget\\packages\\microsoft.sourcelink.common\\8.0.0\\microsoft.sourcelink.common.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

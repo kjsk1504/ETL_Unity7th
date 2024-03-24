@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mcvefV19N9HtXy8EZd/9jQxpryhG/pxtm97gLmOlAfNDyVkpooKtqUJ149deyoov4lEdIA1nlVnKKz+abpKjgg==",
+  "dgSpecHash": "wF2EUvFs0yDuWz/NDyjDRCoO8oXRENov8F1Rvvk50DHJaBPcoZmcn2PZAv87l6VKz+44sF4V1yXzN/Lfh6R+hA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreading_AsyncAwait\\MultiThreading_AsyncAwait.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kjsk1\\.nuget\\packages\\microsoft.sourcelink.common\\8.0.0\\microsoft.sourcelink.common.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

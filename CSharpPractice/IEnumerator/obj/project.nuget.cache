@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2IaOzXvkeS2Hlv5Ft4P+nphgiv4oXAM5XRqT5pcQWW8ArGFHBDkJSoZpNcDGPTzV0d8wrl0S/qmph9+dTMi59w==",
+  "dgSpecHash": "koVazEub73JXsccCIvD7ssY3KgMemlZTRZYl3yv3ZenklAX/ke/143ds40uEAahgY/d37i1DhFB0TPE++v44+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\IEnumerator\\IEnumeratorPractice.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kjsk1\\.nuget\\packages\\microsoft.sourcelink.common\\8.0.0\\microsoft.sourcelink.common.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oEepDlm7PzElgl1qBo53GoBu4ELYpgqi2k+CRRug/cTwSl5N0+Nbs9purWOBCr0k7HSEbV/ePJw4ujQgp5KTYg==",
+  "dgSpecHash": "x7TCx1SWjQXB67wTQS8D3ZyP2692aO4R/gcNvaj9/g6wE0v4hQVi1yEzLT/uNtJXMIR41+1bt7GZ4t2dtYGFNg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjsk1\\Documents\\GitHub\\ETL_Unity7th\\CSharpPractice\\MultiThreadingTest\\MultiThreadingTest.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kjsk1\\.nuget\\packages\\microsoft.sourcelink.common\\8.0.0\\microsoft.sourcelink.common.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
