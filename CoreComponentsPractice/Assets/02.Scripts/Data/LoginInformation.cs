@@ -1,36 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Profiling;
+using Firebase.Firestore;
+using System;
+using Firebase.Extensions;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using DiceGame.Game;
+using DiceGame.UI;
+using Firebase;
+using Firebase.Auth;
 
 namespace DiceGame.Data
 {
     public static class LoginInformation
     {
-        public static bool loggedIn => profile.IsValid;
-        public static ProfileDataModel profile { get; private set; }
-        public static bool isTesting = true;
+        public static bool loggedIn => string.IsNullOrEmpty(s_id) == false;
+        public static string userKey { get; private set; }
+        public static ProfileDataModel profile { get; set; }
+        private static string s_id;
 
-        public static bool TryLogin(string id, string pw)
+
+        public static async Task<bool> RefreshInformationAsync(string id)
         {
-            if (isTesting)
+            bool result = false;
+
+            if (GameManager.instance.isTesting)
             {
-                profile = new ProfileDataModel
-                {
-                    id = "tester",
-                    pw = "0000",
-                    nickname = ""
-                };
+                id = "tester";
             }
 
-            if (loggedIn)
+            FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+            userKey = id.Replace("@", "").Replace(".", "");
+            DocumentReference docRef = db.Collection("users").Document(userKey);
+
+            await docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
             {
-                Debug.Log($"[LoginInformation] : Logged in with {profile.id}");
-                return true;
-            }
-                
-            Debug.Log($"[LoginInformation] : Failed to Login with {profile.id}");
-            return false;
+                Dictionary<string, object> documentDictionary = task.Result.ToDictionary();
+
+                if (documentDictionary != null)
+                {
+                    profile = new ProfileDataModel
+                    {
+                        nickname = (string)documentDictionary["nickname"],
+                    };
+                    result = true;
+                }
+            });
+
+            s_id = id;
+            return result;
         }
     }
 }

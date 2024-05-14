@@ -1,4 +1,6 @@
 using DiceGame.Data;
+using DiceGame.Data.Mock;
+using DiceGame.Network;
 using DiceGame.Singleton;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,11 +10,14 @@ namespace DiceGame.Game
     public enum GameState
     {
         None,
+        WaitUntilInternetConnected,
         Login,
         WaitUntilLoggedIn,
         LoadResources,
         WaitUntilResourcesLoaded,
-        InGame,
+        InLobby,
+        InGameReady,
+        InGamePlay,
     }
 
 
@@ -51,6 +56,14 @@ namespace DiceGame.Game
             {
                 case GameState.None:
                     break;
+                case GameState.WaitUntilInternetConnected:
+                    {
+                        if (InternetConnection.IsGoogleWebsiteReachable())
+                        {
+                            _state++;
+                        }
+                    }
+                    break;
                 case GameState.Login:
                     {
                         SceneManager.LoadScene("Login");
@@ -59,8 +72,12 @@ namespace DiceGame.Game
                     break;
                 case GameState.WaitUntilLoggedIn:
                     {
-                        if (LoginInformation.loggedIn)
-                            _state++;
+                        if (LoginInformation.loggedIn &&
+                            LoginInformation.profile != null)
+                        {
+                            if (PhotonManager.instance)
+                                _state++;
+                        }
                     }
                     break;
                 case GameState.LoadResources:
@@ -74,8 +91,19 @@ namespace DiceGame.Game
                     }
                     break;
                 case GameState.WaitUntilResourcesLoaded:
+                    {
+                        if (unitOfWork.isReady)
+                        {
+                            SceneManager.LoadScene("Lobby");
+                            _state++;
+                        }
+                    }
                     break;
-                case GameState.InGame:
+                case GameState.InLobby:
+                    break;
+                case GameState.InGameReady:
+                    break;
+                case GameState.InGamePlay:
                     break;
                 default:
                     break;
