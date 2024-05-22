@@ -5,6 +5,7 @@ using UnityEngine.Android;
 
 public class GPS : MonoBehaviour, IGPS
 {
+    public bool isValid { get; private set; }
 
     public float latitude
     {
@@ -93,6 +94,7 @@ public class GPS : MonoBehaviour, IGPS
         }
         else
         {
+            isValid = true;
             LocationInfo locationInfo = Input.location.lastData;
 
             while (true)
