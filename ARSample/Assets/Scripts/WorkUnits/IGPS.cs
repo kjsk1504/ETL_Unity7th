@@ -1,5 +1,7 @@
 ﻿public interface IGPS
 {
+    bool isValid { get; }
+
     /// <summary>
     /// 위도
     /// </summary>
