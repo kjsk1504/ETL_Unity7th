@@ -27,6 +27,16 @@ public class GPS : MonoBehaviour, IGPS
         }
     }
 
+    public float altitude
+    {
+        get => _altitude;
+        set
+        {
+            _altitude = value;
+            isDirty = true;
+        }
+    }
+
     public bool isDirty
     {
         get
@@ -46,6 +56,7 @@ public class GPS : MonoBehaviour, IGPS
     }
     [SerializeField] private float _latitude;
     [SerializeField] private float _longitude;
+    [SerializeField] private float _altitude;
     [SerializeField] private bool _isDirty;
     [SerializeField] private float _refreshPeriod = 1.0f;
 
@@ -102,7 +113,7 @@ public class GPS : MonoBehaviour, IGPS
                 locationInfo = Input.location.lastData;
                 latitude = locationInfo.latitude;
                 longitude = locationInfo.longitude;
-
+                altitude = locationInfo.altitude;
                 yield return new WaitForSeconds(_refreshPeriod);
             }
         }

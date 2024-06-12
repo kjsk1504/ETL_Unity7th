@@ -23,6 +23,7 @@ public class MockGPS : MonoBehaviour, IGPS
             isDirty = true;
         }
     }
+    public float altitude => 0f;
 
     public bool isDirty 
     {
